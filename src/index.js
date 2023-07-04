@@ -1,5 +1,5 @@
 import * as basicLightbox from 'basiclightbox';
-// import 'basicLightbox/dist/basicLightbox.min.css';
+import 'basicLightbox/dist/basicLightbox.min.css';
 
 import { instruments } from './instruments.js';
 
@@ -35,7 +35,7 @@ function onClick(evt) {
     	<div class="modal">
           <img src="${product.img}" alt="${product.name}" width="200" />
           <h2>${product.name}</h2>
-          <h3>${product.price}</h3>
+          <h3>${product.price} грн</h3>
           <p>${product.description}</p>
           <div>
             <button>Add to favorite</button>
