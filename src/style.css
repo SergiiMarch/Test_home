@@ -1,11 +1,11 @@
-button {
+/* button {
   background-color: rgb(55, 68, 68);
   color: white;
 }
 button:hover,
 button:focus {
   background-color: blueviolet;
-}
+} */
 
 .modal {
   width: 600px;
