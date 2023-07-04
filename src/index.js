@@ -1,6 +1,6 @@
 import * as basicLightbox from 'basiclightbox';
 
-import 'basiclightbox/dist/basiclightbox.min.css';
+// import 'basiclightbox/dist/basiclightbox.min.css';
 
 import { instruments } from './instruments.js';
 
