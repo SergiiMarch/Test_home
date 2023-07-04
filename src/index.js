@@ -1,3 +1,6 @@
+import * as basicLightbox from 'basiclightbox';
+import 'basicLightbox/dist/basicLightbox.min.css';
+
 import { instruments } from './instruments.js';
 
 const search = document.querySelector('.js-search');
@@ -27,7 +30,15 @@ function onClick(evt) {
   if (evt.target.classList.contains('js-info')) {
     const { id } = evt.target.closest('.js-card').dataset;
     const product = findProduct(Number(id));
-    console.log(product);
   }
 }
 createMarkup(instruments);
+
+function findProduct(productId) {
+  return instruments.find(({ id }) => id === productId);
+}
+const instance = basicLightbox.create(`
+	<h1>Dynamic Content</h1>
+	<p>You can set the content of the lightbox with JS.</p>
+`);
+instance.show();
