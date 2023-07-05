@@ -15,8 +15,8 @@ function createMarkup(arr) {
     <h2>${name}</h2>
     <p><a href="#" class="js-info">More information</a></p>
     <div>
-      <button>Add to favorite</button>
-      <button>Add to basket</button>
+      <button class="js-favorite">Add to favorite</button>
+      <button class="js-basket">Add to basket</button>
     </div>
   </li>`
     )
@@ -39,16 +39,23 @@ function onClick(evt) {
           <h3>${product.price} грн</h3>
           <p>${product.description}</p>
           <div>
-            <button>Add to favorite</button>
-            <button>Add to basket</button>
+            <button class="js-favorite">Add to favorite</button>
+            <button class="js-basket">Add to basket</button>
           </div>
         </div>
     `);
     instance.show();
   }
+  if (evt.target.classList.contains('js-basket')) {
+    const product = findProduct(evt.target);
+  }
+  if (evt.target.classList.contains('js-favorite')) {
+    const product = findProduct(evt.target);
+  }
 }
 createMarkup(instruments);
 
-function findProduct(productId) {
+function findProduct(element) {
+  const productId = Number(element.closest('.js-card').dataset.id);
   return instruments.find(({ id }) => id === productId);
 }
